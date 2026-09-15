@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick a Time — Acquired Pro</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root{--paper:#F6F7F9;--surface:#fff;--ink:#12171D;--ink-2:#4C5762;--ink-3:#7A8590;--rule:#DCE1E6;--pine:#1D5E4A;--pine-soft:#E3EFEA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+  header{border-bottom:1px solid var(--rule);background:rgba(246,247,249,.9)}
+  header .wrap{height:68px;display:flex;align-items:center}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+  .brand svg{width:32px;height:32px}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm b{font-family:Fraunces,Georgia,serif;font-size:1.18rem}
+  .brand .wm span{font-size:.56rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2);margin-top:.22rem}
+  .steps{display:flex;gap:.5rem;justify-content:center;margin:2.4rem 0 0;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+  .steps span{padding:.35rem .7rem;border-radius:999px;border:1px solid var(--rule);color:var(--ink-3)}
+  .steps .done{background:var(--pine-soft);border-color:var(--pine-soft);color:var(--pine)}
+  .steps .on{background:var(--pine);border-color:var(--pine);color:#fff}
+  h1{font-family:Fraunces,Georgia,serif;font-size:clamp(1.9rem,4.4vw,2.6rem);line-height:1.1;letter-spacing:-.018em;text-align:center;margin:1.2rem 0 .6rem;text-wrap:balance}
+  .sub{text-align:center;color:var(--ink-2);max-width:34rem;margin:0 auto}
+  .cal{margin:2rem 0 0;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:.6rem;box-shadow:0 24px 50px -30px rgba(18,23,29,.35)}
+  .cal iframe{width:100%;min-height:760px;border:0;border-radius:10px;display:block;overflow:hidden}
+  footer{margin:3rem 0 0;padding:1.5rem 0 2.2rem;border-top:1px solid var(--rule);text-align:center;font-size:.82rem;color:var(--ink-3)}
+  footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;margin-bottom:.5rem}
+  footer nav a{color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Acquired Pro home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="13" fill="#1D5E4A"/><path d="M17 19 L32 34 L47 19" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="5" fill="#fff"/></svg>
+    <span class="wm"><b>Acquired</b><span>Pro</span></span>
+  </a>
+</div></header>
+
+<main class="wrap">
+  <div class="steps"><span class="done">1 · Your firm</span><span class="on">2 · Pick a time</span></div>
+  <h1>Last step: pick a time for your 15-minute call.</h1>
+  <p class="sub">Your details are already filled in. Choose a slot and confirm, and you're booked.</p>
+
+  <div class="cal">
+    <iframe id="ap-cal" title="Book your strategy call" scrolling="no"></iframe>
+  </div>
+</main>
+
+<footer class="wrap">
+  <nav>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:info@acquiredpro.io">info@acquiredpro.io</a>
+    <a href="tel:+19546816540">(954) 681-6540</a>
+  </nav>
+  <div>© <span id="yr">2026</span> Lwin Solutions Pro LLC d/b/a Acquired Pro · Coral Springs, FL</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  (function () {
+    var base = 'https://api.leadconnectorhq.com/widget/bookings/acquiredpro-lawfirm-strategy';
+    var inParams = new URLSearchParams(window.location.search);
+    var out = new URLSearchParams();
+    ['first_name', 'last_name', 'email', 'phone'].forEach(function (k) {
+      var v = inParams.get(k);
+      if (v) out.set(k, v);
+    });
+    var qs = out.toString();
+    document.getElementById('ap-cal').src = base + (qs ? '?' + qs : '');
+  })();
+</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>
