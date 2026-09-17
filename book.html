@@ -69,11 +69,38 @@
   (function () {
     var base = 'https://api.leadconnectorhq.com/widget/bookings/acquiredpro-lawfirm-strategy';
     var inParams = new URLSearchParams(window.location.search);
+
+    // GHL doesn't guarantee how it names the fields it hands back on redirect,
+    // so accept the common variants and normalise to what the widget expects.
+    var aliases = {
+      first_name: ['first_name', 'firstName', 'firstname', 'first'],
+      last_name: ['last_name', 'lastName', 'lastname', 'last'],
+      email: ['email', 'Email', 'email_address'],
+      phone: ['phone', 'Phone', 'phone_number', 'phoneNumber']
+    };
+
+    function pick(names) {
+      for (var i = 0; i < names.length; i++) {
+        var v = inParams.get(names[i]);
+        if (v) return v.trim();
+      }
+      return '';
+    }
+
     var out = new URLSearchParams();
-    ['first_name', 'last_name', 'email', 'phone'].forEach(function (k) {
-      var v = inParams.get(k);
-      if (v) out.set(k, v);
+    Object.keys(aliases).forEach(function (key) {
+      var v = pick(aliases[key]);
+      if (v) out.set(key, v);
     });
+
+    // A single full-name param stands in when first/last didn't come through.
+    var full = pick(['full_name', 'fullName', 'name']);
+    if (full && !out.get('first_name')) {
+      var parts = full.split(/\s+/);
+      out.set('first_name', parts.shift());
+      if (parts.length && !out.get('last_name')) out.set('last_name', parts.join(' '));
+    }
+
     var qs = out.toString();
     document.getElementById('ap-cal').src = base + (qs ? '?' + qs : '');
   })();
