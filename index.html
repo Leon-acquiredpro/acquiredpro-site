@@ -53,36 +53,15 @@
   @media (max-width:760px){.nav nav a:not(.btn){display:none}}
 
   /* hero */
-  .hero{padding:5.5rem 0 5rem;position:relative;overflow:hidden}
+  .hero{padding:4.2rem 0 4.5rem;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:56px 56px;opacity:.45;mask-image:radial-gradient(ellipse at 75% 30%,#000 0%,transparent 62%);-webkit-mask-image:radial-gradient(ellipse at 75% 30%,#000 0%,transparent 62%);pointer-events:none}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:3.5rem;align-items:center}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.02fr;gap:3.2rem;align-items:start}
   .hero h1{font-size:clamp(2.6rem,5.6vw,4.3rem);font-weight:700;line-height:1.02;margin:1.1rem 0 1.4rem}
   .hero h1 em{font-style:normal;color:var(--pine)}
   .hero .sub{font-size:1.14rem;color:var(--ink-2);max-width:32rem}
   .hero .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem}
   .hero .fine{margin-top:1.4rem;font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3);letter-spacing:.02em}
-  @media (max-width:940px){.hero .wrap{grid-template-columns:1fr}}
-
-  /* intake feed */
-  .feed{background:var(--night);color:var(--night-ink);border-radius:14px;padding:1.3rem;box-shadow:0 30px 60px -28px rgba(18,23,29,.55);position:relative}
-  .feed-head{display:flex;align-items:center;justify-content:space-between;padding:.2rem .3rem 1rem;border-bottom:1px solid var(--night-rule)}
-  .feed-head .t{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--night-ink-2)}
-  .live{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--f-mono);font-size:.68rem;color:var(--pine-glow)}
-  .live i{width:7px;height:7px;border-radius:50%;background:var(--pine-glow);box-shadow:0 0 0 0 rgba(92,183,149,.6);animation:pulse 1.8s infinite}
-  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(92,183,149,0)}100%{box-shadow:0 0 0 0 rgba(92,183,149,0)}}
-  .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:1rem 0 .9rem}
-  .stage{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--night-ink-2);padding:.45rem .5rem;border:1px solid var(--night-rule);border-radius:5px;text-align:center;transition:all .35s ease}
-  .stage.on{color:var(--night);background:var(--pine-glow);border-color:var(--pine-glow)}
-  .cards{display:flex;flex-direction:column;gap:.55rem;min-height:252px}
-  .card{background:var(--night-2);border:1px solid var(--night-rule);border-radius:9px;padding:.8rem .9rem;display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;animation:slide .5s ease both}
-  @keyframes slide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-  .card .case{font-weight:600;font-size:.92rem}
-  .card .meta{font-family:var(--f-mono);font-size:.7rem;color:var(--night-ink-2);grid-column:1/-1}
-  .card .st{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;padding:.18rem .45rem;border-radius:4px;align-self:start;white-space:nowrap}
-  .st.q{background:rgba(211,160,85,.14);color:#D3A055}
-  .st.d{background:rgba(92,183,149,.15);color:var(--pine-glow)}
-  .st.x{background:rgba(157,169,180,.12);color:var(--night-ink-2)}
-  .feed-foot{margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--night-rule);font-family:var(--f-mono);font-size:.66rem;color:var(--night-ink-2);display:flex;justify-content:space-between}
+  @media (max-width:940px){.hero .wrap{grid-template-columns:1fr;gap:2.6rem}}
 
   /* sections */
   section{padding:6rem 0}
@@ -121,12 +100,21 @@
 
   .apply{background:var(--mist);border-top:1px solid var(--rule)}
   .apply .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:start}
-  .apply .checks{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-direction:column;gap:.9rem}
-  .apply .checks li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;color:var(--ink-2)}
-  .apply .checks svg{width:20px;height:20px;color:var(--pine);margin-top:.18rem}
+  .checks{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-direction:column;gap:.9rem}
+  .checks li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;color:var(--ink-2)}
+  .checks svg{width:20px;height:20px;color:var(--pine);margin-top:.18rem}
   .form-shell{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:.6rem;box-shadow:0 24px 50px -30px rgba(18,23,29,.35)}
   .form-shell iframe{width:100%;min-height:900px;border:0;border-radius:10px;display:block}
   @media (max-width:940px){.apply .wrap{grid-template-columns:1fr}}
+  #apply{scroll-margin-top:92px}
+  .form-head{padding:1.15rem 1.15rem .35rem}
+  .form-head h2{font-family:var(--f-display);font-size:1.32rem;line-height:1.15;letter-spacing:-.012em;margin:0}
+  .form-head p{margin:.45rem 0 0;font-size:.92rem;color:var(--ink-2)}
+  .hero .form-shell iframe{min-height:960px}
+  .closing{text-align:center}
+  .closing .wrap{grid-template-columns:1fr;justify-items:center}
+  .closing .sec-head{margin-left:auto;margin-right:auto}
+  .closing .cta{display:flex;justify-content:center;margin-top:2.2rem}
 
   .faq{max-width:52rem}
   .faq details{border-bottom:1px solid var(--rule);padding:1.3rem 0}
@@ -176,26 +164,35 @@
       <span class="eyebrow reveal">The 30-in-30 guarantee for law firms</span>
       <h1 class="reveal d1">30 exclusive leads in 30 days. <em>Or you don't pay.</em></h1>
       <p class="sub reveal d2">We run the ads, qualify every lead, and deliver workers' compensation, employment law and auto accident cases straight to your intake team — in the states you're licensed in.</p>
-      <div class="cta reveal d3">
-        <a class="btn btn-primary" href="#apply">Book a strategy call
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
-      </div>
+      <ul class="checks reveal d3">
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>A 15-minute call — we'll respect your time</span></li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>We'll show you the ads and the screening before anything else</span></li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>No obligation — if it isn't a fit for your firm, we'll tell you</span></li>
+      </ul>
       <p class="fine reveal d4">Exclusive to your firm · Your states only · Bad leads replaced free</p>
     </div>
 
-    <div class="feed reveal d2" aria-label="Illustration of how a lead moves from ad to your intake team">
-      <div class="feed-head">
-        <span class="t">Lead flow — example</span>
-        <span class="live"><i></i>Live pipeline</span>
+    <div class="form-shell reveal d2" id="apply">
+      <div class="form-head">
+        <h2>Book your strategy call</h2>
+        <p>About 60 seconds. Tell us about your firm, then pick a time on the next screen.</p>
       </div>
-      <div class="stages">
-        <span class="stage" data-s="0">Ad response</span>
-        <span class="stage" data-s="1">Qualified</span>
-        <span class="stage" data-s="2">To your intake</span>
-      </div>
-      <div class="cards" id="cards"></div>
-      <div class="feed-foot"><span>Illustrative example</span><span id="clock">00:00</span></div>
+      <!-- Swap this iframe for the ROASForm embed once it's set up. -->
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/cnepRQorSrtTe8y4vfI2"
+        id="inline-cnepRQorSrtTe8y4vfI2"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="AP – Law Firm Application"
+        data-layout-iframe-id="inline-cnepRQorSrtTe8y4vfI2"
+        data-form-id="cnepRQorSrtTe8y4vfI2"
+        title="AP – Law Firm Application"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </div>
 </section>
@@ -299,38 +296,18 @@
 </section>
 -->
 
-<section class="apply" id="apply">
+<section class="apply closing" id="start">
   <div class="wrap">
     <div>
       <span class="eyebrow">Book a strategy call</span>
       <div class="sec-head" style="margin-bottom:0">
         <h2>Claim your 30 leads in 30 days.</h2>
-        <p>Takes about 60 seconds. Tell us about your firm, then pick a time on the next screen. Your details carry over, so there's nothing to re-enter.</p>
+        <p>One 15-minute call. We'll show you the ads, the screening and the states we can cover for your firm — then you decide.</p>
       </div>
-      <ul class="checks">
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>A 15-minute call — we'll respect your time</span></li>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>We'll show you the ads and screening before anything else</span></li>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>No obligation — if it isn't a fit for your firm, we'll tell you</span></li>
-      </ul>
-    </div>
-    <div class="form-shell">
-      <!-- Swap this iframe for the ROASForm embed once it's set up. -->
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/cnepRQorSrtTe8y4vfI2"
-        id="inline-cnepRQorSrtTe8y4vfI2"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="AP – Law Firm Application"
-        data-layout-iframe-id="inline-cnepRQorSrtTe8y4vfI2"
-        data-form-id="cnepRQorSrtTe8y4vfI2"
-        title="AP – Law Firm Application"
-        loading="lazy"></iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <div class="cta">
+        <a class="btn btn-primary" href="#apply">Book a strategy call
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -388,54 +365,6 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var leads = [
-      { c: 'Rear-end collision', m: 'Auto · Tampa, FL · 3 days ago · No attorney' },
-      { c: 'Denied comp claim', m: "Workers' comp · Allentown, PA · Appeal needed" },
-      { c: 'Unpaid overtime', m: 'Employment · Houston, TX · 2 years of hours' },
-      { c: 'Rideshare collision', m: 'Auto · Chicago, IL · Passenger · No attorney' },
-      { c: 'Delayed warehouse claim', m: "Workers' comp · Minneapolis, MN · Claim pending" }
-    ];
-    var cards = document.getElementById('cards');
-    var stages = document.querySelectorAll('.stage');
-    var clock = document.getElementById('clock');
-    var i = 0, t = 0;
-
-    function setStage(n) {
-      stages.forEach(function (s) { s.classList.toggle('on', Number(s.dataset.s) === n); });
-    }
-    function card(lead, cls, label) {
-      var el = document.createElement('div');
-      el.className = 'card';
-      el.innerHTML = '<span class="case"></span><span class="st ' + cls + '"></span><span class="meta"></span>';
-      el.querySelector('.case').textContent = lead.c;
-      el.querySelector('.st').textContent = label;
-      el.querySelector('.meta').textContent = lead.m;
-      return el;
-    }
-    function render() {
-      cards.innerHTML = '';
-      for (var k = 0; k < 4; k++) {
-        var lead = leads[(i + k) % leads.length];
-        var st = k === 0 ? ['q', 'Qualifying'] : ['d', 'Delivered'];
-        cards.appendChild(card(lead, st[0], st[1]));
-      }
-    }
-    function tick() {
-      var phase = t % 3;
-      setStage(phase);
-      if (phase === 0) { i = (i + leads.length - 1) % leads.length; render(); }
-      if (phase === 2) { var first = cards.querySelector('.st'); if (first) { first.className = 'st d'; first.textContent = 'Delivered'; } }
-      t++;
-    }
-    render(); setStage(2);
-    if (!reduce) {
-      setInterval(tick, 1600);
-      var s = 0;
-      setInterval(function () { s++; clock.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }, 1000);
-    }
-  })();
 </script>
 </body>
 </html>
