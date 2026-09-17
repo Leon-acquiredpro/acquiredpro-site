@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're Booked — Acquired Pro</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root{--paper:#F6F7F9;--surface:#fff;--ink:#12171D;--ink-2:#4C5762;--ink-3:#7A8590;--rule:#DCE1E6;--pine:#1D5E4A;--pine-soft:#E3EFEA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:48rem;margin:0 auto;padding:0 1.5rem}
+  header{border-bottom:1px solid var(--rule);background:rgba(246,247,249,.9)}
+  header .wrap{height:68px;display:flex;align-items:center;max-width:60rem}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+  .brand svg{width:32px;height:32px}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm b{font-family:Fraunces,Georgia,serif;font-size:1.18rem}
+  .brand .wm span{font-size:.56rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2);margin-top:.22rem}
+  .steps{display:flex;gap:.5rem;justify-content:center;margin:2.6rem 0 0;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;flex-wrap:wrap}
+  .steps span{padding:.35rem .7rem;border-radius:999px;border:1px solid var(--rule);color:var(--ink-3)}
+  .steps .done{background:var(--pine-soft);border-color:var(--pine-soft);color:var(--pine)}
+  .steps .on{background:var(--pine);border-color:var(--pine);color:#fff}
+  .tick{width:54px;height:54px;margin:2.2rem auto 0;border-radius:50%;background:var(--pine-soft);display:grid;place-items:center}
+  .tick svg{width:26px;height:26px;color:var(--pine)}
+  h1{font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,4.6vw,2.7rem);line-height:1.08;letter-spacing:-.018em;text-align:center;margin:1.2rem 0 .7rem;text-wrap:balance}
+  .sub{text-align:center;color:var(--ink-2);max-width:34rem;margin:0 auto}
+  .card{margin:2.4rem 0 0;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:1.8rem 1.9rem;box-shadow:0 24px 50px -34px rgba(18,23,29,.35)}
+  .card h2{font-family:Fraunces,Georgia,serif;font-size:1.22rem;margin:0 0 1.1rem;letter-spacing:-.01em}
+  .card+.card{margin-top:1.2rem}
+  ul.list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.85rem}
+  ul.list li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;color:var(--ink-2)}
+  ul.list svg{width:20px;height:20px;color:var(--pine);margin-top:.2rem}
+  .note{margin:1.3rem 0 0;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.95rem;color:var(--ink-2)}
+  .note b{color:var(--ink)}
+  footer{margin:3rem 0 0;padding:1.5rem 0 2.4rem;border-top:1px solid var(--rule);text-align:center;font-size:.82rem;color:var(--ink-3)}
+  footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;margin-bottom:.5rem}
+  footer nav a{color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Acquired Pro home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="13" fill="#1D5E4A"/><path d="M17 19 L32 34 L47 19" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="45" r="5" fill="#fff"/></svg>
+    <span class="wm"><b>Acquired</b><span>Pro</span></span>
+  </a>
+</div></header>
+
+<main class="wrap">
+  <div class="steps"><span class="done">1 · Your firm</span><span class="done">2 · Pick a time</span><span class="on">3 · You're booked</span></div>
+
+  <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></div>
+
+  <h1>You're booked.</h1>
+  <p class="sub">The invite is on its way to your inbox. Here's exactly what happens between now and the call.</p>
+
+  <div class="card">
+    <h2>Before we speak</h2>
+    <ul class="list">
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>Check your email for the calendar invite and accept it, so the time is held on both sides.</span></li>
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>Have a rough number in mind for what a signed case is worth to your firm. It's the only figure we need.</span></li>
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>If someone else handles intake, bring them along — they'll have the sharpest questions.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>What we'll cover in 15 minutes</h2>
+    <ul class="list">
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>The actual ads we run, and the screening every claimant goes through before they reach you.</span></li>
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>Whether your states are open — we place with one firm per market, so this isn't always a yes.</span></li>
+      <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l3.5 3.5L16 6"/></svg><span>How the 30-in-30 guarantee works, in writing, before you commit to anything.</span></li>
+    </ul>
+    <p class="note"><b>No pitch deck, no pressure.</b> If your firm isn't the right fit, we'll say so on the call and save us both the follow-up.</p>
+  </div>
+
+  <!-- PROOF BLOCK — uncomment once there is a real screenshot at brand/proof-lead-log.png.
+       Do not put numbers here that the lead log does not actually show.
+  <div class="card">
+    <h2>What the volume looks like</h2>
+    <img src="brand/proof-lead-log.png" alt="Recent qualified case volume" style="width:100%;border-radius:10px;border:1px solid var(--rule)">
+    <p class="note">Every case is consent-captured with a timestamp and IP, and goes to one firm only.</p>
+  </div>
+  -->
+
+  <div class="card">
+    <h2>Need to change the time?</h2>
+    <p style="margin:0;color:var(--ink-2)">Use the reschedule link in your confirmation email, or just reply to it — we'll sort it out. If something urgent comes up, call or text <a href="tel:+19546816540" style="color:var(--pine);font-weight:600">(954) 681-6540</a>.</p>
+  </div>
+</main>
+
+<footer class="wrap">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:info@acquiredpro.io">info@acquiredpro.io</a>
+    <a href="tel:+19546816540">(954) 681-6540</a>
+  </nav>
+  <div>© <span id="yr">2026</span> Lwin Solutions Pro LLC d/b/a Acquired Pro · Coral Springs, FL</div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
