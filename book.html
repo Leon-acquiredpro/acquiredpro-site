@@ -122,5 +122,25 @@ src="https://www.facebook.com/tr?id=1760011011812894&ev=PageView&noscript=1"
   })();
 </script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+<script>
+  // The booking happens inside the GoHighLevel iframe, so the parent page never
+  // navigates and no Lead would ever fire. Listen for the widget's own booking
+  // message instead. The session flag is shared with thanks.html, so if the
+  // calendar is also set to redirect there the event is still only counted once.
+  window.addEventListener('message', function (e) {
+    var host;
+    try { host = new URL(e.origin).hostname; } catch (err) { return; }
+    if (!/(^|\.)(leadconnectorhq\.com|msgsndr\.com)$/.test(host)) return;
+    var d = e.data;
+    var s = typeof d === 'string' ? d : JSON.stringify(d || '');
+    if (!/appointment|booked|booking.?success/i.test(s)) return;
+    try {
+      if (sessionStorage.getItem('ap_lead_fired')) return;
+      sessionStorage.setItem('ap_lead_fired', '1');
+    } catch (err) {}
+    if (window.fbq) fbq('track', 'Lead');
+  });
+</script>
 </body>
 </html>

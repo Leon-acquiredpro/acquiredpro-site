@@ -49,6 +49,16 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1760011011812894');
 fbq('track', 'PageView');
+
+// A booked strategy call is the conversion. Fire Lead once per visitor session:
+// the GHL calendar can land them here by redirect, and book.html also fires on
+// the widget's own booking message, so the flag stops it counting twice.
+try {
+  if (!sessionStorage.getItem('ap_lead_fired')) {
+    sessionStorage.setItem('ap_lead_fired', '1');
+    fbq('track', 'Lead');
+  }
+} catch (e) { fbq('track', 'Lead'); }
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1760011011812894&ev=PageView&noscript=1"
