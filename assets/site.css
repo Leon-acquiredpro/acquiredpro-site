@@ -114,11 +114,15 @@
   .faq details p{margin-top:.8rem;color:var(--ink-2);max-width:44rem}
 
   footer{background:var(--night);color:var(--night-ink-2);padding:3rem 0}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center;min-width:0}
   footer .brand .wm b{color:var(--night-ink)}
   footer .brand .wm span{color:var(--night-ink-2)}
-  footer nav{display:flex;gap:1.5rem;font-size:.88rem}
-  footer nav a{text-decoration:none}
+  footer nav{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:.88rem;min-width:0;max-width:100%}
+  footer nav a{text-decoration:none;white-space:nowrap}
+  @media (max-width:480px){
+    footer .wrap{flex-direction:column;align-items:flex-start;gap:1.15rem}
+    footer nav{gap:.7rem 1.15rem}
+  }
   footer nav a:hover{color:var(--night-ink)}
   footer small{font-family:var(--f-mono);font-size:.72rem;width:100%;border-top:1px solid var(--night-rule);padding-top:1.4rem}
 
